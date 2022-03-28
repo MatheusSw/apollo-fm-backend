@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->string('access_token');
             $table->string('access_token_secret');
             $table->string('lastfm_user')->unique()->nullable();
-            $table->string('report_text')->nullable()->default("This week I played {artists}");
+            $table->string('report_text')->nullable()->default("This week the following artists had the honour to be on my ears {artists}");
             $table->string('report_day')->default("Sunday");
             $table->bigInteger('monthly_scrobbles')->nullable();
             $table->bigInteger('monthly_loved_tracks')->nullable();
