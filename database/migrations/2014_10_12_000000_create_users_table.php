@@ -23,6 +23,9 @@ return new class extends Migration {
             $table->string('lastfm_user')->unique()->nullable();
             $table->string('report_text')->nullable()->default("This week I played {artists}");
             $table->string('report_day')->default("Sunday");
+            $table->bigInteger('monthly_scrobbles')->nullable();
+            $table->bigInteger('monthly_loved_tracks')->nullable();
+            $table->bigInteger('monthly_artists')->nullable();
             $table->timeTz('report_time')->default("18:00:00-03:00");
             $table->timestamps();
         });

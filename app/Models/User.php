@@ -47,6 +47,12 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $report_time
  * @method static \Illuminate\Database\Eloquent\Builder|User whereReportDay($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereReportTime($value)
+ * @property int $monthly_scrobbles
+ * @property int $monthly_loved_tracks
+ * @property int $monthly_artists
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereMonthlyArtists($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereMonthlyLovedTracks($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereMonthlyScrobbles($value)
  */
 class User extends Authenticatable
 {
