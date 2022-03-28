@@ -27,7 +27,6 @@ functions:
             - ${bref:layer.php-80-fpm}
         events:
             - httpApi: '*'
-              cors: true
     # This function lets us run artisan commands in Lambda
     artisan:
         handler: artisan
