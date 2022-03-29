@@ -28,10 +28,10 @@ package:
         - .env
 custom:
   serverlessSsmFetch:
-    TWITTER_API_KEY: /aws/ssm/TWITTER_API_KEY~true
-    TWITTER_API_SECRET: /aws/ssm/TWITTER_API_SECRET~true
-    LASTFM_API_KEY: /aws/ssm/LASTFM_API_KEY~true
-    APP_KEY: /aws/ssm/APP_KEY~true
+    TWITTER_API_KEY: TWITTER_API_KEY~true
+    TWITTER_API_SECRET: TWITTER_API_SECRET~true
+    LASTFM_API_KEY: LASTFM_API_KEY~true
+    APP_KEY: APP_KEY~true
 functions:
     # This function runs the Laravel website/API
     web:
