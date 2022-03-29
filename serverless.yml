@@ -17,10 +17,6 @@ provider:
       SESSION_DOMAIN: 'apollofm.net'
       TWITTER_CALLBACK_URL: 'https://apollofm.net/callbacks/twitter'
       LASTFM_API_URL: 'http://ws.audioscrobbler.com/2.0/'
-      TWITTER_API_KEY: ${ssm:/TWITTER_API_KEY~true}
-      TWITTER_API_SECRET: ${ssm:/TWITTER_API_SECRET~true}
-      LASTFM_API_KEY: ${ssm:/LASTFM_API_KEY~true}
-      APP_KEY: ${ssm:/APP_KEY~true}
 package:
     # Directories to exclude from deployment
     patterns:
@@ -30,7 +26,12 @@ package:
         - '!storage/**'
         - '!tests/**'
         - .env
-
+custom:
+  serverlessSsmFetch:
+    TWITTER_API_KEY: /aws/ssm/TWITTER_API_KEY~true
+    TWITTER_API_SECRET: /aws/ssm/TWITTER_API_SECRET~true
+    LASTFM_API_KEY: /aws/ssm/LASTFM_API_KEY~true
+    APP_KEY: /aws/ssm/APP_KEY~true
 functions:
     # This function runs the Laravel website/API
     web:
@@ -49,5 +50,5 @@ functions:
             - ${bref:layer.console} # The "console" layer
 
 plugins:
-    # We need to include the Bref plugin
-    - ./vendor/bref/bref
+  - ./vendor/bref/bref
+  - serverless-ssm-fetch
