@@ -40,7 +40,9 @@ functions:
         layers:
             - ${bref:layer.php-80-fpm}
         events:
-            - httpApi: '*'
+            - http:
+                path: api/foo
+                method: get
     # This function lets us run artisan commands in Lambda
     artisan:
         handler: artisan
