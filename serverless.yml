@@ -8,7 +8,15 @@ provider:
     stage: production
     runtime: provided.al2
     lambdaHashingVersion: 20201221
-
+    environment:
+      APP_ENV: production
+      APP_DEBUG: false
+      APP_URL: 'https://apollofm.net/'
+      SESSION_DRIVER: 'cookie'
+      SESSION_LIFETIME: 120
+      SESSION_DOMAIN: 'apollofm.net'
+      TWITTER_CALLBACK_URL: 'https://apollofm.net/callbacks/twitter'
+      LASTFM_API_URL: 'http://ws.audioscrobbler.com/2.0/'
 package:
     # Directories to exclude from deployment
     patterns:
@@ -17,6 +25,7 @@ package:
         - '!resources/assets/**'
         - '!storage/**'
         - '!tests/**'
+        - .env
 
 functions:
     # This function runs the Laravel website/API

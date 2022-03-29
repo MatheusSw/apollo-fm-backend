@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('foo', fn() => 'bar');
+Route::get('foo', fn() => env('TWITTER_CALLBACK_URL'));
 
 Route::middleware('auth:sanctum')->prefix('user')->group(function () {
     Route::get('/', [UserController::class, 'show']);
