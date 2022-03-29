@@ -33,15 +33,15 @@ custom:
     LASTFM_API_KEY: LASTFM_API_KEY~true
     APP_KEY: APP_KEY~true
   customDomain:
-    rest:
+    http:
       domainName: api.apollofm.net
       stage: ${self:provider.stage}
       certificateName: '*.apollofm.net'
       hostedZoneId: Z0758643EHQ4TITL55W8
       createRoute53Record: true
-      endpointType: 'edge'
+      endpointType: 'regional'
       securityPolicy: tls_1_2
-      apiType: rest
+      apiType: http
       autoDomain: false
 functions:
     # This function runs the Laravel website/API
