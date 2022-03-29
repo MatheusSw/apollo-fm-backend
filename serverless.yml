@@ -32,6 +32,17 @@ custom:
     TWITTER_API_SECRET: TWITTER_API_SECRET~true
     LASTFM_API_KEY: LASTFM_API_KEY~true
     APP_KEY: APP_KEY~true
+  customDomain:
+    http:
+      domainName: api.apollofm.net
+      stage: ${self:provider.stage}
+      certificateName: '*.apollofm.net'
+      createRoute53Record: true
+      createRoute53IPv6Record: true
+      endpointType: 'edge'
+      securityPolicy: tls_1_2
+      apiType: http
+      autoDomain: false
 functions:
     # This function runs the Laravel website/API
     web:
@@ -40,9 +51,7 @@ functions:
         layers:
             - ${bref:layer.php-80-fpm}
         events:
-            - http:
-                path: api/foo
-                method: get
+            - httpApi: '*'
     # This function lets us run artisan commands in Lambda
     artisan:
         handler: artisan
@@ -54,3 +63,4 @@ functions:
 plugins:
   - ./vendor/bref/bref
   - serverless-ssm-fetch
+  - serverless-domain-manager
