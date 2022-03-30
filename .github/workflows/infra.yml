@@ -22,15 +22,17 @@ jobs:
     - uses: shivammathur/setup-php@v2
       with:
         php-version: "8.0"
-        extensions: pgsql
+        extensions: pdo_pgsql
     - uses: "ramsey/composer-install@v1"
       with:
         composer-options: "--prefer-dist --optimize-autoloader --no-dev"
     - run: composer require bref/bref
-    - name: PHP configuration file
-      run: php --ini
-    - name: Artisan config clear
+    - name: Print compiled PHP modules
+      run: php -m
+    - name: Run Artisan config clear
       run: php artisan config:clear
+    - name: Setup php.ini file
+      run:
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
