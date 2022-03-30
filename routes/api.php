@@ -24,6 +24,6 @@ Route::middleware('auth:sanctum')->prefix('user')->group(function () {
 Route::middleware('auth:sanctum')->post('/logout', function (Request $request) {
     $request->user()->currentAccessToken()->delete();
 
-    return redirect(env('LOCAL_FRONT_END_URL') . '/login');
+    return redirect('/login');
 });
 

@@ -15,7 +15,7 @@ provider:
       SESSION_DRIVER: 'cookie'
       SESSION_LIFETIME: 120
       SESSION_DOMAIN: 'apollofm.net'
-      TWITTER_CALLBACK_URL: 'https://apollofm.net/callbacks/twitter'
+      TWITTER_CALLBACK_URL: 'callbacks/twitter'
       LASTFM_API_URL: 'http://ws.audioscrobbler.com/2.0/'
 package:
     # Directories to exclude from deployment

@@ -34,5 +34,5 @@ Route::get('/callbacks/twitter', function (Request $request) {
 
     Auth::login($user);
 
-    return redirect(env('APP_URL'));
+    return redirect('/');
 });
