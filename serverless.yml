@@ -12,6 +12,7 @@ provider:
       APP_ENV: production
       APP_DEBUG: false
       APP_URL: 'https://apollofm.net/'
+      DB_DATABASE: 'postgres'
       SESSION_DRIVER: 'cookie'
       SESSION_LIFETIME: 120
       SESSION_DOMAIN: 'apollofm.net'
@@ -35,6 +36,7 @@ custom:
     DB_PASSWORD: DB_PASSWORD~true
     DB_HOST: DB_HOST~true
     DB_PORT: DB_PORT~true
+    DB_USERNAME: DB_USERNAME~true
   customDomain:
     http:
       domainName: api.apollofm.net
