@@ -22,11 +22,13 @@ jobs:
     - uses: shivammathur/setup-php@v2
       with:
         php-version: "8.0"
-        extensions: pgsql 
+        extensions: pgsql
     - uses: "ramsey/composer-install@v1"
       with:
         composer-options: "--prefer-dist --optimize-autoloader --no-dev"
     - run: composer require bref/bref
+    - run: php --ini
+    - run: sail php --ini
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
@@ -34,4 +36,3 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        ENV_TEST: "Env test"
