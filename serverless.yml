@@ -35,14 +35,9 @@ custom:
   customDomain:
     http:
       domainName: api.apollofm.net
-      stage: ${self:provider.stage}
-      certificateName: '*.apollofm.net'
-      hostedZoneId: Z0758643EHQ4TITL55W8
-      createRoute53Record: true
+      createRoute53Record: false
       endpointType: 'regional'
-      securityPolicy: tls_1_2
       apiType: http
-      autoDomain: false
 functions:
     # This function runs the Laravel website/API
     web:
