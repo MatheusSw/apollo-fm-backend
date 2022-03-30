@@ -50,7 +50,6 @@ functions:
         timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
         layers:
             - ${bref:layer.php-80-fpm}
-            - ${bref-extra:pgsql-php-80}
         events:
             - httpApi: '*'
     # This function lets us run artisan commands in Lambda
@@ -63,6 +62,5 @@ functions:
 
 plugins:
   - ./vendor/bref/bref
-  - ./vendor/bref/extra-php-extensions
   - serverless-ssm-fetch
   - serverless-domain-manager
