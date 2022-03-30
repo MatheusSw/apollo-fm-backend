@@ -32,6 +32,9 @@ custom:
     TWITTER_API_SECRET: TWITTER_API_SECRET~true
     LASTFM_API_KEY: LASTFM_API_KEY~true
     APP_KEY: APP_KEY~true
+    DB_PASSWORD: DB_PASSWORD~true
+    DB_HOST: DB_HOST~true
+    DB_PORT: DB_PORT~true
   customDomain:
     http:
       domainName: api.apollofm.net
