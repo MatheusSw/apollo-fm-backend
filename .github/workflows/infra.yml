@@ -27,8 +27,10 @@ jobs:
       with:
         composer-options: "--prefer-dist --optimize-autoloader --no-dev"
     - run: composer require bref/bref
-    - run: php --ini
-    - run: sail php --ini
+    - name: PHP configuration file
+      run: php --ini
+    - name: Artisan config clear
+      run: php artisan config:clear
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
