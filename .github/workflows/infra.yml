@@ -31,8 +31,6 @@ jobs:
       run: php -m
     - name: Run Artisan config clear
       run: php artisan config:clear
-    - name: Setup php.ini file
-      run:
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
