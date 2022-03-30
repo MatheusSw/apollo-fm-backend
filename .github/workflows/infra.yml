@@ -26,7 +26,6 @@ jobs:
       with:
         composer-options: "--prefer-dist --optimize-autoloader --no-dev"
     - run: composer require bref/bref
-    - run: composer require bref/extra-php-extensions
     - name: Print compiled PHP modules
       run: php -m
     - name: Run Artisan config clear
