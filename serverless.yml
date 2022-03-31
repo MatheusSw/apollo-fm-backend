@@ -34,7 +34,7 @@ custom:
     LASTFM_API_KEY: LASTFM_API_KEY~true
     APP_KEY: APP_KEY~true
     DB_PASSWORD: DB_PASSWORD~true
-    DB_HOST: DB_HOST~true
+    DB_HOST: DB_HOST
     DB_PORT: DB_PORT
     DB_USERNAME: DB_USERNAME~true
   customDomain:
