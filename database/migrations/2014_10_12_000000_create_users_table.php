@@ -26,7 +26,7 @@ return new class extends Migration {
             $table->bigInteger('monthly_scrobbles')->nullable();
             $table->bigInteger('monthly_loved_tracks')->nullable();
             $table->bigInteger('monthly_artists')->nullable();
-            $table->timeTz('report_time')->default("18:00:00-03:00");
+            $table->dateTime('report_time')->default("1970-01-01T18:00:00");
             $table->timestamps();
         });
     }

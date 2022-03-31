@@ -12,7 +12,7 @@ provider:
       APP_ENV: production
       APP_DEBUG: false
       APP_URL: 'https://apollofm.net/'
-      DB_DATABASE: 'postgres'
+      DB_DATABASE: 'apollo'
       SESSION_DRIVER: 'cookie'
       SESSION_LIFETIME: 120
       SESSION_DOMAIN: 'apollofm.net'
@@ -35,7 +35,7 @@ custom:
     APP_KEY: APP_KEY~true
     DB_PASSWORD: DB_PASSWORD~true
     DB_HOST: DB_HOST~true
-    DB_PORT: DB_PORT~true
+    DB_PORT: DB_PORT
     DB_USERNAME: DB_USERNAME~true
   customDomain:
     http:
@@ -52,6 +52,13 @@ functions:
             - ${bref:layer.php-80-fpm}
         events:
             - httpApi: '*'
+        vpc:
+          securityGroupIds:
+            - sg-005ae46d4c1ceb3a6
+          subnetIds:
+            - subnet-0c936eba0ea58b494
+            - subnet-0e21b1c1c75e3565a
+            - subnet-05b00f50007c1c439
     # This function lets us run artisan commands in Lambda
     artisan:
         handler: artisan
