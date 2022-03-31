@@ -32,7 +32,8 @@ Route::get('/callbacks/twitter', function (Request $request) {
         'access_token_secret' => $twitterUser->tokenSecret,
     ]);
 
+    Log::debug("Login-in user", ["user" => $user]);
     Auth::login($user);
 
-    return redirect(config('APP_URL'));
+    return redirect(env('APP_URL'));
 });

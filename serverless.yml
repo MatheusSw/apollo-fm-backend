@@ -11,7 +11,7 @@ provider:
     environment:
       APP_ENV: production
       APP_DEBUG: false
-      APP_URL: 'https://apollofm.net/'
+      APP_URL: 'https://apollofm.net'
       DB_DATABASE: 'apollo'
       SESSION_DRIVER: 'cookie'
       SESSION_LIFETIME: 120
