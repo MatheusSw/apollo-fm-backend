@@ -52,13 +52,6 @@ functions:
             - ${bref:layer.php-80-fpm}
         events:
             - httpApi: '*'
-        vpc:
-          securityGroupIds:
-            - sg-005ae46d4c1ceb3a6
-          subnetIds:
-            - subnet-0c936eba0ea58b494
-            - subnet-0e21b1c1c75e3565a
-            - subnet-05b00f50007c1c439
     # This function lets us run artisan commands in Lambda
     artisan:
         handler: artisan
