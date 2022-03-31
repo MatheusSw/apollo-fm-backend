@@ -41,7 +41,7 @@ class UserController extends BaseController
             $user->monthly_artists = $monthly_stats['top_artists'];
         }
         $result = $user->save();
-        return response('', $result ? 204 : 500);
+        return response($user, $result ? 204 : 500);
     }
 
     public function show(Request $request)
