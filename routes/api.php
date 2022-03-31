@@ -22,8 +22,8 @@ Route::middleware('auth:sanctum')->prefix('user')->group(function () {
 });
 
 Route::middleware('auth:sanctum')->post('/logout', function (Request $request) {
-    $request->user()->currentAccessToken()->delete();
-
-    return redirect('/login');
+    //For some reason response('')->withoutCookie doesn't work :/
+    \Illuminate\Support\Facades\Cookie::expire('apollo_fm_session');
+    return response('');
 });
 
